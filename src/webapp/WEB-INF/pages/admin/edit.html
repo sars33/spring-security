@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit user</title>
+</head>
+<body>
+<form action="/admin/edit" method="POST">
+    <input type="hidden" name="id" th:value="${user.id}">
+
+    <label for="username">Login</label>
+    <input type="text" name="username" id="username" th:value="${user.username}">
+    <br/>
+    <label for="password">Password</label>
+    <input type="text" name="password" id="password" th:value="${user.password}">
+    <br/>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" th:value="${user.name}">
+    <br/>
+    <label for="last_name">Last name</label>
+    <input type="text" name="lastName" id="last_name" th:value="${user.lastName}">
+    <br/>
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" th:value="${user.email}">
+    <br/>
+    <select name="roles" id="roles" multiple>
+        <option value="ROLE_ADMIN">ADMIN</option>
+        <option value="ROLE_USER">USER</option>
+    </select>
+    <input type="submit" value="Edit">
+</form>
+<div th:insert="/logout::logout"></div>
+</body>
+</html>

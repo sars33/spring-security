@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+</head>
+<body>
+<div align="center">
+    <form action="/admin" method="POST">
+        <label for="name"><strong>First name</strong></label><br>
+        <input type="text" name="name" id="name" size="50" placeholder="Name"><br>
+        <label for="name"><strong>Last name</strong></label><br>
+        <input type="text" name="lastName" id="last_name" size="50" placeholder="Last name"><br>
+        <label for="name"><strong>Email</strong></label><br>
+        <input type="text" name="email" id="email" size="50" placeholder="Email"><br><br>
+
+        <style>
+            .button {
+                height: 30px;
+                width: 200px;
+                font-size: 15px;
+                position: relative;
+
+            }
+        </style>
+        <button name="submit-btn" type="submit" id="submit-btn" class="button">Submit</button>
+    </form>
+</div>
+</body>
+</html>

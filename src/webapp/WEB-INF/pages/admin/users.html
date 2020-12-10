@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 70%;
+    }
+
+    table {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    #t01 th {
+        background-color: #bbbbbb;
+        color: black;
+    }
+</style>
+<body>
+<div align="center">
+    <h1>All Users</h1>
+
+    <table th:border="1" id="t01">
+        <tbody>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+        <th:block th:each="user : ${users}">
+            <tr>
+                <td th:text="${user.id}"/>
+                <td th:text="${user.name}"/>
+                <td th:text="${user.lastName}"/>
+                <td th:text="${user.email}"/>
+                <td>
+                    <a th:href="@{/edit/{id}(id=${user.id})}">Edit</a>
+                    <a th:href="@{/delete/{id}(id=${user.id})}">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+
+
+    <style>
+        .button {
+            height: 30px;
+            width: 200px;
+            font-size: 15px;
+            position: relative;
+        }
+    </style>
+    <form action="admin/add">
+        <br>
+        <button name="addButton" type="submit" id="addButton" class="button">Add user</button>
+    </form>
+</div>
+</body>
+</html>
